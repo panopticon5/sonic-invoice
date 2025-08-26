@@ -9,7 +9,7 @@ A music distribution platform for managing royalty calculations and invoice gene
 - **Invoice History**: Complete timeline of all issued invoices with detailed information
 - **Persistent Storage**: Invoice history persists across browser sessions using Zustand + localStorage
 - **Live Updates**: Automatic polling for progress updates every 30 seconds
-- **Responsive UI**: Built with Mantine components for a professional, modern interface
+- **Responsive UI**: Built with [Mantine](https://ui.mantine.dev/) components for a professional, modern interface
 
 ## Architecture
 
