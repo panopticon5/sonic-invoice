@@ -7,7 +7,7 @@ A music distribution platform for managing royalty calculations and invoice gene
 - **Real-time Progress Tracking**: Monitor royalty calculation progress for each song
 - **Invoice Generation**: Issue invoices with a single click, capturing current progress
 - **Invoice History**: Complete timeline of all issued invoices with detailed information
-- **Persistent Storage**: Invoice history persists across browser sessions using Zustand + localStorage
+- **Persistent Storage**: Invoice history persists across browser sessions using [Zustand](https://zustand.docs.pmnd.rs/getting-started/introduction) + localStorage
 - **Live Updates**: Automatic polling for progress updates every 30 seconds
 - **Responsive UI**: Built with [Mantine](https://ui.mantine.dev/) components for a professional, modern interface
 
