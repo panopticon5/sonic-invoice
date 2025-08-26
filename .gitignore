@@ -1,0 +1,11 @@
+# dependencies
+backend/node_modules
+backend/package-lock.json
+frontend/node_modules
+frontend/package-lock.json
+
+# misc
+.idea/
+.DS_Store
+
+npm-debug.log*
