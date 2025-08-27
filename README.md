@@ -155,4 +155,4 @@ npm test -- --coverage
 
 ## License
 
-This project is licensed under the [MIT License](https://github.com/panopticon5/sonic-invoice?tab=MIT-1-ov-file#readme).
+This project is provided for viewing and educational purposes only, see [license](https://github.com/panopticon5/sonic-invoice?tab=License-1-ov-file#readme).
