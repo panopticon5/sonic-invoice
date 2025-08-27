@@ -1,13 +1,13 @@
 import { renderHook, act } from '../test-utils';
 import { useInvoiceStore } from '../store/invoiceStore';
 
-describe('InvoiceStore', () => {
+describe('Invoice Store', () => {
   beforeEach(() => {
     // Reset store state before each test
     useInvoiceStore.setState({ invoices: [] });
   });
 
-  test('should add invoice correctly', () => {
+  test('should add invoice', () => {
     const { result } = renderHook(() => useInvoiceStore());
 
     const mockInvoice = {
