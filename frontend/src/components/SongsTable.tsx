@@ -53,7 +53,7 @@ export const SongsTable = ({
     return (
       <Paper shadow="sm" p="lg" withBorder>
         <Title order={2} mb="md">Songs & Royalty Calculations</Title>
-        <Stack>
+        <Stack data-testid="loading-skeleton">
           {[...Array(5)].map((_, i) => (
             <Skeleton key={i} height={50} />
           ))}
