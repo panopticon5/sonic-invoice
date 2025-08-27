@@ -2,6 +2,9 @@
 
 A music distribution platform for managing royalty calculations and invoice generation. This system allows users to track calculation progress for songs and issue invoices when appropriate.
 
+![Dashboard overview](./screenshots/dashboard_overview.png)
+![Invoice history](./screenshots/invoice_history.png)
+
 ## Features
 
 - **Real-time Progress Tracking**: Monitor royalty calculation progress for each song
