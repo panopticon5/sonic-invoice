@@ -1,4 +1,4 @@
-import { renderHook, act } from '../test-utils';
+import { renderHook, act } from '../utils/testUtils.tsx';
 import { useInvoiceStore } from '../store/invoiceStore';
 
 describe('Invoice Store', () => {

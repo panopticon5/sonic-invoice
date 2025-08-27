@@ -1,4 +1,4 @@
-import { render, screen } from '../test-utils';
+import { render, screen } from '../utils/testUtils.tsx';
 import { InvoiceHistory } from '../components/InvoiceHistory';
 import { Invoice } from '../types';
 

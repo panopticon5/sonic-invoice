@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '../test-utils';
+import { render, screen, fireEvent } from '../utils/testUtils.tsx';
 import { SongsTable } from '../components/SongsTable';
 import { Song, Invoice } from '../types';
 

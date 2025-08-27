@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from '../test-utils';
+import { render, screen, fireEvent } from '../utils/testUtils.tsx';
 import { NotificationBanner } from '../components/NotificationBanner';
 
 describe('Notification Banner', () => {
