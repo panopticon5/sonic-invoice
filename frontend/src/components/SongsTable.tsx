@@ -14,6 +14,7 @@ import {
 } from '@mantine/core';
 import { IconFileInvoice, IconClock, IconTrendingUp } from '@tabler/icons-react';
 import { Invoice, Song } from '../types';
+import { getProgressColor } from '../utils/progressUtils';
 
 interface SongsTableProps {
   songs: Song[];
@@ -22,12 +23,7 @@ interface SongsTableProps {
   getInvoiceForSong: (songId: number) => Invoice | undefined;
 }
 
-export const SongsTable = ({
-                                                        songs,
-                                                        loading,
-                                                        onIssueInvoice,
-                                                        getInvoiceForSong,
-                                                      }: SongsTableProps) => {
+export const SongsTable = ({songs, loading, onIssueInvoice, getInvoiceForSong}: SongsTableProps) => {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleString('en-GB', {
@@ -43,13 +39,9 @@ export const SongsTable = ({
     return `${(progress * 100).toFixed(0)}%`;
   };
 
-  const getProgressColor = (progress: number): string => {
-    if (progress < 0.3) return 'red';
-    if (progress < 0.7) return 'yellow';
-    return 'green';
-  };
+  const hasNoSongs = songs.length === 0;
 
-  if (loading && songs.length === 0) {
+  if (loading && hasNoSongs) {
     return (
       <Paper shadow="sm" p="lg" withBorder>
         <Title order={2} mb="md">Songs & Royalty Calculations</Title>
@@ -84,7 +76,8 @@ export const SongsTable = ({
         <Table.Tbody>
           {songs.map((song: Song) => {
             const invoice = getInvoiceForSong(song.id);
-            const progressChanged = invoice && Math.abs(song.progress - invoice.progress) > 0.01;
+            const minAcceptableProgress = 0.01;
+            const progressChanged = invoice && Math.abs(song.progress - invoice.progress) > minAcceptableProgress;
 
             return (
               <Table.Tr key={song.id}>
@@ -166,7 +159,7 @@ export const SongsTable = ({
         </Table.Tbody>
       </Table>
 
-      {songs.length === 0 && !loading && (
+      {hasNoSongs && !loading && (
         <Center py="xl">
           <Text c="dimmed">No songs available</Text>
         </Center>

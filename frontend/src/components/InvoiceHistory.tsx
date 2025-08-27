@@ -14,6 +14,7 @@ import {
 } from '@mantine/core';
 import { IconFileInvoice, IconUser, IconClock } from '@tabler/icons-react';
 import { Invoice } from '../types';
+import { getProgressColor } from '../utils/progressUtils';
 
 interface InvoiceHistoryProps {
   invoices: Invoice[];
@@ -38,12 +39,6 @@ export const InvoiceHistory = ({ invoices }: InvoiceHistoryProps) => {
       day: 'numeric',
       year: 'numeric'
     });
-  };
-
-  const getProgressColor = (progress: number): string => {
-    if (progress < 0.3) return 'red';
-    if (progress < 0.7) return 'yellow';
-    return 'green';
   };
 
   // Sort invoices by date (newest first)
