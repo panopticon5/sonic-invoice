@@ -144,8 +144,6 @@ npm test -- --coverage
 ### Available Scripts
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
 - `npm test` - Run tests
 - `npm run test:watch` - Run tests in watch mode
 - `npm run test:coverage` - Generate test coverage report
@@ -157,4 +155,4 @@ npm test -- --coverage
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](https://github.com/panopticon5/sonic-invoice?tab=MIT-1-ov-file#readme).
