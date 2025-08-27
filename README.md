@@ -41,7 +41,7 @@ sonic-invoice/
     │   │   ├── SongsTable.tsx      # Main songs table with progress tracking
     │   │   ├── InvoiceHistory.tsx  # Invoice timeline view
     │   │   ├── NotificationBanner.tsx # System notifications
-    │   │   └── Header.tsx           # Application header
+    │   │   └── Header.tsx          # Application header
     │   │
     │   ├── store/         # State management
     │   │   └── invoiceStore.ts  # Zustand store for invoices
@@ -52,11 +52,15 @@ sonic-invoice/
     │   │   ├── NotificationBanner.test.ts
     │   │   └── SongsTable.test.ts
     │   │
+    │   ├── utils/         # Utility functions
+    │   │   ├── progressUtils.ts  # Progress-related utilities
+    │   │   └── testUtils.tsx     # Testing utilities
+    │   │
     │   ├── api/           # API service layer
     │   ├── types.ts       # TypeScript type definitions
     │   ├── App.tsx        # Main application component
     │   ├── main.tsx       # Application entry point
-    │   └── test-utils.tsx # Testing utilities
+    │   └── setupTests.ts  # Jest test setup
     │
     ├── index.html
     ├── package.json
