@@ -35,10 +35,6 @@ export const SongsTable = ({songs, loading, onIssueInvoice, getInvoiceForSong}: 
     });
   };
 
-  // const formatProgress = (progress: number): string => {
-  //   return `${(progress * 100).toFixed(0)}%`;
-  // };
-
   const hasNoSongs = songs.length === 0;
 
   if (loading && hasNoSongs) {
