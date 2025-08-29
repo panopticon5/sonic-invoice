@@ -14,7 +14,7 @@ import {
 } from '@mantine/core';
 import { IconFileInvoice, IconClock, IconTrendingUp } from '@tabler/icons-react';
 import { Invoice, Song } from '../types';
-import { getProgressColor } from '../utils/progressUtils';
+import { getProgressColor, formatProgress } from '../utils/progressUtils';
 
 interface SongsTableProps {
   songs: Song[];
@@ -35,9 +35,9 @@ export const SongsTable = ({songs, loading, onIssueInvoice, getInvoiceForSong}: 
     });
   };
 
-  const formatProgress = (progress: number): string => {
-    return `${(progress * 100).toFixed(0)}%`;
-  };
+  // const formatProgress = (progress: number): string => {
+  //   return `${(progress * 100).toFixed(0)}%`;
+  // };
 
   const hasNoSongs = songs.length === 0;
 

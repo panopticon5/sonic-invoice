@@ -14,7 +14,7 @@ import {
 } from '@mantine/core';
 import { IconFileInvoice, IconUser, IconClock } from '@tabler/icons-react';
 import { Invoice } from '../types';
-import { getProgressColor } from '../utils/progressUtils';
+import { formatProgress, getProgressColor } from '../utils/progressUtils';
 
 interface InvoiceHistoryProps {
   invoices: Invoice[];
@@ -109,7 +109,7 @@ export const InvoiceHistory = ({ invoices }: InvoiceHistoryProps) => {
                         striped
                       />
                       <Text size="xs" fw={600} ta="center">
-                        {(invoice.progress * 100).toFixed(0)}% Complete
+                        {formatProgress(invoice.progress)} Complete
                       </Text>
                     </Stack>
 
