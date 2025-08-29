@@ -24,7 +24,7 @@ A music distribution platform for managing royalty calculations and invoice gene
 
 ### Backend
 - **Runtime**: Node.js with Express
-- **API**: RESTful endpoints for song data
+- **API**: Basic RESTful endpoint for songs data
 - **Development**: Automatic CORS configuration
 
 ## Project Structure
@@ -33,6 +33,7 @@ A music distribution platform for managing royalty calculations and invoice gene
 sonic-invoice/
 ├── backend/
 │   ├── server.js          # Express server with songs endpoint
+│   ├── errorMiddleware.js # Global error handling middleware
 │   └── package.json       # Backend dependencies
 │
 └── frontend/

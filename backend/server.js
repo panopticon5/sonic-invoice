@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const errorHandler = require('./errorMiddleware');
 const app = express();
 const PORT = 3001;
 
@@ -35,16 +36,10 @@ app.get('/api/songs', (req, res) => {
   res.json(songs);
 });
 
+app.use(errorHandler);
+
 // Start server
 app.listen(PORT, () => {
   console.log(`🎵 Sonic Invoice Server running on http://localhost:${PORT}`);
   console.log(`📊 Songs endpoint: http://localhost:${PORT}/api/songs`);
-});
-
-// Graceful shutdown
-process.on('SIGTERM', () => {
-  console.log('SIGTERM signal received: closing HTTP server');
-  app.close(() => {
-    console.log('HTTP server closed');
-  });
 });
