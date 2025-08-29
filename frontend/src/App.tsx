@@ -9,7 +9,7 @@ import { SongsTable } from './components/SongsTable';
 import { InvoiceHistory } from './components/InvoiceHistory';
 import { Header } from './components/Header';
 import { NotificationBanner } from './components/NotificationBanner';
-import { Song, Invoice } from './types.ts';
+import { Song, Invoice, isApiError } from './types.ts';
 import { songsApi } from './api/songsApi';
 import { useInvoiceStore } from './store/invoiceStore';
 
@@ -30,7 +30,13 @@ function App() {
         setSongs(data);
         setError(null);
       } catch (err) {
-        setError('Failed to fetch songs. Please ensure the server is running.');
+        if (isApiError(err)) {
+          setError(`Failed to fetch songs. Status: ${err.statusCode}, Message: ${err.message}`);
+        } else if (err instanceof Error) {
+          setError(`Failed to fetch songs. Error: ${err.message}`);
+        } else {
+          setError('An unknown error occurred while fetching songs');
+        }
         console.error('Error fetching songs:', err);
       } finally {
         setLoading(false);

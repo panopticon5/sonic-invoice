@@ -19,3 +19,19 @@ export interface InvoiceStore {
   addInvoice: (invoice: Invoice) => void;
   getInvoiceForSong: (songId: number) => Invoice | undefined;
 }
+
+export interface Error {
+  status: string;
+  statusCode: number;
+  message: string;
+}
+
+export function isApiError(error: unknown): error is Error {
+  return (
+    error !== null &&
+    typeof error === 'object' &&
+    'status' in error &&
+    'statusCode' in error &&
+    'message' in error
+  );
+}
