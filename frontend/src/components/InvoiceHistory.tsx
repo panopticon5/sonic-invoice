@@ -68,7 +68,7 @@ export const InvoiceHistory = ({ invoices }: InvoiceHistoryProps) => {
       ) : (
         <ScrollArea h={600} type="hover">
           <Timeline active={sortedInvoices.length - 1} bulletSize={24} lineWidth={2}>
-            {sortedInvoices.map((invoice, index) => (
+            {sortedInvoices.map((invoice: Invoice, index: number) => (
               <Timeline.Item
                 key={invoice.id}
                 bullet={<IconFileInvoice size={12} />}
